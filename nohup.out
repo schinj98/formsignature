@@ -1,0 +1,37 @@
+[2024-10-07 10:32:16 +0000] [10902] [INFO] Starting gunicorn 23.0.0
+[2024-10-07 10:32:16 +0000] [10902] [INFO] Listening at: unix:/opt/signature_generator_project/signature_generator.sock (10902)
+[2024-10-07 10:32:16 +0000] [10902] [INFO] Using worker: sync
+[2024-10-07 10:32:16 +0000] [10904] [INFO] Booting worker with pid: 10904
+[2024-10-07 10:32:16 +0000] [10905] [INFO] Booting worker with pid: 10905
+[2024-10-07 10:32:16 +0000] [10906] [INFO] Booting worker with pid: 10906
+[2024-10-07 10:44:50 +0000] [10902] [INFO] Handling signal: term
+[2024-10-07 10:44:50 +0000] [10904] [INFO] Worker exiting (pid: 10904)
+[2024-10-07 10:44:50 +0000] [10905] [INFO] Worker exiting (pid: 10905)
+[2024-10-07 10:44:50 +0000] [10906] [INFO] Worker exiting (pid: 10906)
+Traceback (most recent call last):
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 223, in run
+    handler()
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 256, in handle_term
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/signature_generator_project/venv/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 226, in run
+    self.halt()
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 341, in halt
+    self.stop()
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 384, in stop
+    sock.close_sockets(self.LISTENERS, unlink)
+  File "/opt/signature_generator_project/venv/lib/python3.8/site-packages/gunicorn/sock.py", line 212, in close_sockets
+    os.unlink(sock_name)
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/signature_generator_project/signature_generator.sock'

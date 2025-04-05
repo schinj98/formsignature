@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form action="{{ url_for('contact') }}" method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="name">Name:</label>
+            {{ form.name(size=32) }}
+        </div>
+        <div>
+            <label for="surname">Surname:</label>
+            {{ form.surname(size=32) }}
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            {{ form.email(size=32) }}
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+            {{ form.phone(size=32) }}
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            {{ form.message(cols=30, rows=5) }}
+        </div>
+        <div>
+            <label for="captcha">Captcha ({{ captcha_code }}):</label>
+            {{ form.captcha(size=5) }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </form>
+</body>
+</html>

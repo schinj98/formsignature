@@ -1,0 +1,87 @@
+
+/* Container for the title */
+.homemain {
+    text-align: center;
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .homemain h1 {
+    font-size: 3em;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  /* Signature results container */
+  .signatures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Individual signature block */
+  .signature {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: calc(33.33% - 40px); /* 3 items per row on large screens */
+  }
+  
+  .signature img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+   .button-container .btn{
+    color: #fff;
+    margin: 4px 0 30px 0;
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 5px;
+  }
+  .button-container .btn:hover{
+    background-color: #fff;
+    color: #6b81ff;
+  }
+  
+  /* Download link styling */
+  .signature a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #6b81ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 3px solid #6b81ff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signature a:hover {
+    color: #6b81ff;
+    background-color: #fff;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    .signature {
+        width: calc(50% - 40px); /* 2 items per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .signature {
+        width: 100%; /* 1 item per row on small screens */
+    }
+  }
+  
